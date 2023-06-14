@@ -1,6 +1,5 @@
 import React from 'react';
 import { useMemo } from 'react';
-// import PropTypes from 'prop-types';
 import { List, Button } from '../styled';
 import { useSelector, useDispatch } from "react-redux";
 import { deleteContact } from '../redux/contactsSlice';
@@ -10,8 +9,6 @@ export const Contacts = () => {
     const contacts = useSelector(state => state.contacts);
     const filter = useSelector(state => state.filter.value.toLowerCase());
     
-    // const normalizedFilter = filter.toLowerCase();
-
     const visibleContacts = useMemo(() => {
     if (!filter) return contacts;
         return contacts.filter(contact => contact.name.toLowerCase()
@@ -34,7 +31,3 @@ export const Contacts = () => {
     }
 }
 
-// Contacts.propTypes = {
-//     contactsList: PropTypes.array,
-//     onDeleteContact: PropTypes.func,
-// };
