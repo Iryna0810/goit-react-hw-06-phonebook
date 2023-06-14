@@ -1,5 +1,3 @@
-import {useState, useMemo, useEffect } from "react"
-import { nanoid } from 'nanoid'
 import { Form } from "./Form/Form";
 import { Title } from './Title/Title';
 import { Contacts } from "./Contacts/Contacts";
@@ -44,11 +42,9 @@ export const App = () => {
         margin: '0 auto',
         borderRadius: '10px',
       }}>
-      <Title title='Phonebook'
-      ></Title>
-      < Form/>
-      <Title title="Contacts"
-      ></Title>
+      <Title title='Phonebook'></Title>
+      <Form/>
+      <Title title="Contacts"></Title>
       <Filter/>
       <Contacts/>
     </div>
