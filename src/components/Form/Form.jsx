@@ -1,23 +1,13 @@
 import {useState} from 'react';
-// import PropTypes from 'prop-types';
 import { FormWrapper, Button, Input } from '../styled';
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from '../redux/contactsSlice';
+import { contactsSelector } from '../redux/selectors';
 
 
 export const Form = () => {
 
- // const addContact = ({ name, number }) => {
-  //   const ContactItem = {
-  //     id: nanoid(),
-  //     name,
-  //     number,
-  //   };
-  //   
-
-  //   setContacts(contacts => [...contacts, ContactItem]);
-  // };
-  const contacts = useSelector(state => state.contacts);
+  const contacts = useSelector(contactsSelector);
   
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -75,8 +65,3 @@ export const Form = () => {
     <Button type="submit">Add contacts</Button>
   </FormWrapper>
 };
-
-
-
-
-// Form.propTypes = { onSubmit: PropTypes.func.isRequired};
